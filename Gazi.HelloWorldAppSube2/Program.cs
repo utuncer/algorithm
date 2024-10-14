@@ -10,6 +10,7 @@ namespace Gazi.HelloWorldAppSube2
             Console.WriteLine("deneme");
             //deneme
 
+
         }
     }
 }
