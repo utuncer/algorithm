@@ -7,9 +7,23 @@ namespace Gazi.HelloWorldAppSube2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("deneme");
-            //deneme
+            #region Console.WriteLine’da Yazım (Syntax) Kuralları - String Birleştirme
+            //string isim = "ahmet";
+            //string soyad = "mehmet";
 
+            //Console.WriteLine("hoşgeldiniz, " + isim + " " + soyad);
+            //Console.WriteLine("hoşgeldiniz, {0} {1}", isim, soyad);
+            //Console.WriteLine($"hoşgeldiniz, {isim} {soyad}");
+            #endregion
+            #region Kullanıcı Etkileşimleri
+            Console.Write("isminizi giriniz: ");
+            string name = Console.ReadLine();
+            Console.Write("soyadınızı giriniz: ");
+            string soyad = Console.ReadLine();
+            Console.Write("yaşınızı giriniz: ");
+            string yas = Console.ReadLine();
+            Console.WriteLine($"hoşgeldin,\n{name} {soyad}\nyaşınız {yas}");
+            #endregion
 
         }
     }
@@ -111,5 +125,11 @@ const byte a = 30;
 
 int* yas;
 
+- HEAP bölgesi STACK bölgesine göre daha büyüktür. Dolayısıyla tek seferde birden fazla veri depolayabilir. Örn: Ahmet stringinde 5 tane char vardır.
+- Referans tipi değişkenlerde, referanslar STACK bölgesinde, değerler HEAP bölgesinde tutulur. Değere ulaşmak için, o değerin HEAP bölgesindeki adresini bilen referansına ulaşmak gereklidir.
+- **Metod Parametresi:** Metodların işlerini yapabilmek için ihtiyaç duydukları verilerdir. Bir metod hiç parametre istemeyebilir yada birden fazla veri tipinde parametre de kabul edilebilir.
+
+
+Void: Bu geri dönüş tipine sahip metodlar, işlerini yaptıktan sonra geriye bilgi dönmezler. 
  */
 
