@@ -17,6 +17,7 @@ namespace Gazi.HelloWorldAppSube2
 
 /*
 
+
 namespace: İçinde classları bulunduran yapılardır.
 
 Scope(Blok Yapıları): {} parantezleri arasındaki alanlardır.
