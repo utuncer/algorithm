@@ -76,7 +76,6 @@ namespace Gazi.HelloWorldAppSube2
             //}
 
             #endregion
-
             //double maas = 5000;
             //maas -= 1000;// maas = maas - 1000;
             //Console.WriteLine(maas);
@@ -121,11 +120,11 @@ namespace Gazi.HelloWorldAppSube2
             //Console.WriteLine("2. sayıyı giriniz:");
             //int sayi2 = int.Parse(Console.ReadLine());
 
-            //if (sayi1>sayi2)
+            //if (sayi1 > sayi2)
             //{
             //    Console.WriteLine("Sayı 1 büyüktür");
             //}
-            //else if(sayi2>sayi1)
+            //else if (sayi2 > sayi1)
             //{
             //    Console.WriteLine("Sayı 2 büyüktür");
             //}
@@ -134,23 +133,166 @@ namespace Gazi.HelloWorldAppSube2
             //    Console.WriteLine("Sayılar eşit");
             //}
 
+            #region Hava Durumu Nasıl? Uygulaması (if/else if/else)
 
-            Console.WriteLine("Hava nasıl?(Güzel/Kötü)");
-            string cevap = Console.ReadLine().ToLower().Trim();
+            //Console.WriteLine("hava nasıl?(güzel/kötü)");
+            //string cevap = Console.ReadLine().ToLower().Trim();
 
-            if (cevap == "güzel")
+            //if (cevap == "güzel")
+            //{
+            //    Console.Write("Hava kaç derece = ");
+            //    int derece = Convert.ToInt32(Console.ReadLine());
+            //    if (derece < 15)
+            //    {
+            //        Console.WriteLine($"Hava {derece} derece hava soğuk evde otur");
+            //    }
+            //    else if (derece > 35)
+            //    {
+            //        Console.WriteLine($"Hava {derece} derece hava sıcak evde otur");
+            //    }
+            //    else if (derece <= 35 || derece >= 15)
+            //    {
+            //        Console.WriteLine($"Hava {derece} derece dışarı çık");
+            //    }
+            //}
+            //else if (cevap == "kötü")
+            //{
+            //    Console.WriteLine("evde otur");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("sadece güzel/kötü cevabı verebilirsiniz.");
+            //}
+            //// <15: Hava soğuk evde otur 
+            //// 15-35 dışarı çık
+            //// >35 hava sıcak evde otur
+
+
+
+
+            // Ctrl + F5 ile kullanıcının nasıl önizleyeceğini görürsün
+            // F5 ile debugger modunda çalıştırırsın
+            #endregion
+            #region Bankacılık uygulaması if else
+            //Console.Write("İşlem seçiniz:\n1-EFT\n2-Havale İşlemleri\n3-İnternet Bankacılığı\n4-Şifre İşlemleri\nSayı Giriniz: ");
+            //int islem = Convert.ToInt32(Console.ReadLine());
+
+            //if (islem == 1)
+            //{
+            //    Console.WriteLine("EFT");
+            //}
+            //else if (islem == 2)
+            //{
+            //    Console.WriteLine("Havale İşlemleri");
+
+            //}
+            //else if (islem == 3)
+            //{
+            //    Console.WriteLine("İnternet Bankacılığı");
+
+            //}
+            //else if (islem == 4)
+            //{
+            //    Console.WriteLine("Şİfre İşlemleri");
+
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Yanlış sayı veya harf tuşladınız...");
+
+            //}
+            #endregion
+            #region Bankacılık uygulaması switch/case/default
+            //Console.Write("İşlem seçiniz:\n1-EFT\n2-Havale İşlemleri\n3-İnternet Bankacılığı\n4-Şifre İşlemleri\nSayı Giriniz: ");
+            //int islem = Convert.ToInt32(Console.ReadLine());
+            //switch (islem)
+            //{
+            //    case 1:
+            //        Console.WriteLine("EFT İşlemleri");
+            //        break;
+            //    case 2:
+            //        Console.WriteLine("Havale İşlemleri");
+            //        break;
+            //    case 3:
+            //        Console.WriteLine("İnternet Bankacılığı");
+            //        break;
+            //    case 4:
+            //        Console.WriteLine("Şifre İşlemleri");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Hatalı Giriş Yaptınız");
+            //        break;
+            //}
+            //// Bir program ne kadar az satır okursa o kadar performansı iyidir. Switch if-else den daha performanslıdır ama onun kadar esnek değişdir.
+            #endregion
+            #region Geometri Alan/Çevre Hesaplayan Uygulama (swtitch/case, if/else iç içe kullanımı)
+            Console.Write("1-Kare\n2-Daire\n3-Üçgen\nSeçiminizi yapın = ");
+            int secim = Convert.ToInt32(Console.ReadLine());
+            string tercih = "";
+            int uzunluk = 0;
+            Console.OutputEncoding = System.Text.Encoding.UTF8; // Unicode destekle
+            switch (secim)
             {
-                Console.WriteLine("Dışarı çık");
+                case 1:
+                    Console.Write("Kareyi Seçtiniz Alan/Çevre = ");
+                    tercih = Console.ReadLine().ToLower().Trim();
+                    Console.Write("Karenin bir kenarının uzunluğunu giriniz = ");
+                    uzunluk = Convert.ToInt32(Console.ReadLine());
+                    if (tercih == "alan")
+                    {
+                        Console.WriteLine($"Karenin alanı {uzunluk * uzunluk}");
+                    }
+                    else if (tercih == "çevre")
+                    {
+                        Console.WriteLine($"Karenin çevresi {4 * uzunluk}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Yanlış bir ifade girdiniz");
+                    }
+                    break;
+                case 2:
+                    Console.Write("Daireyi Seçtiniz Alan/Çevre = ");
+                    tercih = Console.ReadLine().ToLower().Trim();
+                    Console.Write("Dairenin çap uzunluğunu giriniz = ");
+                    uzunluk = Convert.ToInt32(Console.ReadLine());
+                    if (tercih == "alan")
+                    {
+                        Console.WriteLine($"Dairenin alanı {uzunluk * uzunluk}π");
+                    }
+                    else if (tercih == "çevre")
+                    {
+                        Console.WriteLine($"Dairenin çevresi {2 * uzunluk}π");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Yanlış bir ifade girdiniz");
+                    }
+                    break;
+                case 3:
+                    Console.Write("Üçgeni Seçtiniz Alan/Çevre = ");
+                    tercih = Console.ReadLine().ToLower().Trim();
+                    Console.Write("Eşkenar üçgenin bir kenarının uzunluğunu giriniz = ");
+                    uzunluk = Convert.ToInt32(Console.ReadLine());
+
+                    if (tercih == "alan")
+                    {
+                        Console.WriteLine($"Eşkenar üçgenin alanı {((uzunluk * uzunluk) * Math.Sqrt(3)) / 4}");
+                    }
+                    else if (tercih == "çevre")
+                    {
+                        Console.WriteLine($"Eşkenar üçgenin çevresi {3 * uzunluk}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Yanlış bir ifade girdiniz");
+                    }
+
+                    break;
             }
-            else if (cevap == "kötü")
-            {
-                Console.WriteLine("Evde otur");
-            }
-            else
-            {
-                Console.WriteLine("Sadece Güzel/Kötü cevabı verebilirsiniz.");
-            }
-            Console.ReadKey();
+            #endregion
+
+
         }
     }
 }
