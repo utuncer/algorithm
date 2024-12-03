@@ -76,6 +76,8 @@ namespace Gazi.HelloWorldAppSube2
             //}
 
             #endregion
+
+            #region +=, -= kullanımı
             //double maas = 5000;
             //maas -= 1000;// maas = maas - 1000;
             //Console.WriteLine(maas);
@@ -90,6 +92,7 @@ namespace Gazi.HelloWorldAppSube2
 
             //Ternary Operator - 3 adet operand alır.
             //string sonuc = sayi1 > sayi2 ? "Sayı 1 büyük" : "Sayı2 büyük veya sayılar eşit";
+            #endregion
 
             #region Tür Dönüşümleri
 
@@ -114,7 +117,7 @@ namespace Gazi.HelloWorldAppSube2
             //int number = (int)value;//Heap->Stack Unboxing 
             #endregion
 
-
+            #region Kolay İf - Else if - Else Kullanımı
             //Console.WriteLine("1. sayıyı giriniz:");
             //int sayi1 = int.Parse(Console.ReadLine());
             //Console.WriteLine("2. sayıyı giriniz:");
@@ -132,6 +135,7 @@ namespace Gazi.HelloWorldAppSube2
             //{
             //    Console.WriteLine("Sayılar eşit");
             //}
+            #endregion
 
             #region Hava Durumu Nasıl? Uygulaması (if/else if/else)
 
@@ -173,6 +177,7 @@ namespace Gazi.HelloWorldAppSube2
             // Ctrl + F5 ile kullanıcının nasıl önizleyeceğini görürsün
             // F5 ile debugger modunda çalıştırırsın
             #endregion
+
             #region Bankacılık uygulaması if else
             //Console.Write("İşlem seçiniz:\n1-EFT\n2-Havale İşlemleri\n3-İnternet Bankacılığı\n4-Şifre İşlemleri\nSayı Giriniz: ");
             //int islem = Convert.ToInt32(Console.ReadLine());
@@ -202,6 +207,7 @@ namespace Gazi.HelloWorldAppSube2
 
             //}
             #endregion
+
             #region Bankacılık uygulaması switch/case/default
             //Console.Write("İşlem seçiniz:\n1-EFT\n2-Havale İşlemleri\n3-İnternet Bankacılığı\n4-Şifre İşlemleri\nSayı Giriniz: ");
             //int islem = Convert.ToInt32(Console.ReadLine());
@@ -225,71 +231,151 @@ namespace Gazi.HelloWorldAppSube2
             //}
             //// Bir program ne kadar az satır okursa o kadar performansı iyidir. Switch if-else den daha performanslıdır ama onun kadar esnek değişdir.
             #endregion
+
             #region Geometri Alan/Çevre Hesaplayan Uygulama (swtitch/case, if/else iç içe kullanımı)
-            Console.Write("1-Kare\n2-Daire\n3-Üçgen\nSeçiminizi yapın = ");
-            int secim = Convert.ToInt32(Console.ReadLine());
+            Console.Write("-> (TR/EN)");
+            string dil = Console.ReadLine().ToLower().Trim();
             string tercih = "";
             int uzunluk = 0;
-            Console.OutputEncoding = System.Text.Encoding.UTF8; // Unicode destekle
-            switch (secim)
+            int secim = 0;
+            switch (dil)
             {
-                case 1:
-                    Console.Write("Kareyi Seçtiniz Alan/Çevre = ");
-                    tercih = Console.ReadLine().ToLower().Trim();
-                    Console.Write("Karenin bir kenarının uzunluğunu giriniz = ");
-                    uzunluk = Convert.ToInt32(Console.ReadLine());
-                    if (tercih == "alan")
+                case "tr":
+                    Console.Write("1-Kare\n2-Daire\n3-Üçgen\nSeçiminizi yapın = ");
+                    secim = Convert.ToInt32(Console.ReadLine());
+                    tercih = "";
+                    uzunluk = 0;
+                    switch (secim)
                     {
-                        Console.WriteLine($"Karenin alanı {uzunluk * uzunluk}");
-                    }
-                    else if (tercih == "çevre")
-                    {
-                        Console.WriteLine($"Karenin çevresi {4 * uzunluk}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Yanlış bir ifade girdiniz");
+                        case 1:
+                            Console.Write("Kareyi Seçtiniz Alan/Çevre = ");
+                            tercih = Console.ReadLine().ToLower().Trim();
+                            Console.Write("Karenin bir kenarının uzunluğunu giriniz = ");
+                            uzunluk = Convert.ToInt32(Console.ReadLine());
+                            if (tercih == "alan")
+                            {
+                                Console.WriteLine($"Karenin alanı {uzunluk * uzunluk}");
+                            }
+                            else if (tercih == "çevre")
+                            {
+                                Console.WriteLine($"Karenin çevresi {4 * uzunluk}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Yanlış bir ifade girdiniz");
+                            }
+                            break;
+                        case 2:
+                            Console.Write("Daireyi Seçtiniz Alan/Çevre = ");
+                            tercih = Console.ReadLine().ToLower().Trim();
+                            Console.Write("Dairenin çap uzunluğunu giriniz = ");
+                            uzunluk = Convert.ToInt32(Console.ReadLine());
+                            if (tercih == "alan")
+                            {
+                                Console.WriteLine($"Dairenin alanı {uzunluk * uzunluk * Math.PI}");
+                            }
+                            else if (tercih == "çevre")
+                            {
+                                Console.WriteLine($"Dairenin çevresi {2 * uzunluk * Math.PI}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Yanlış bir ifade girdiniz");
+                            }
+                            break;
+                        case 3:
+                            Console.Write("Üçgeni Seçtiniz Alan/Çevre = ");
+                            tercih = Console.ReadLine().ToLower().Trim();
+                            Console.Write("Eşkenar üçgenin bir kenarının uzunluğunu giriniz = ");
+                            uzunluk = Convert.ToInt32(Console.ReadLine());
+
+                            if (tercih == "alan")
+                            {
+                                Console.WriteLine($"Eşkenar üçgenin alanı {((uzunluk * uzunluk) * Math.Sqrt(3)) / 4}");
+                            }
+                            else if (tercih == "çevre")
+                            {
+                                Console.WriteLine($"Eşkenar üçgenin çevresi {3 * uzunluk}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Yanlış bir ifade girdiniz");
+                            }
+
+                            break;
                     }
                     break;
-                case 2:
-                    Console.Write("Daireyi Seçtiniz Alan/Çevre = ");
-                    tercih = Console.ReadLine().ToLower().Trim();
-                    Console.Write("Dairenin çap uzunluğunu giriniz = ");
-                    uzunluk = Convert.ToInt32(Console.ReadLine());
-                    if (tercih == "alan")
+                case "en":
+                    Console.Write("1-Square\n2-Circle\n3-Triangle\nMake your choice = ");
+                    secim = Convert.ToInt32(Console.ReadLine());
+                    tercih = "";
+                    uzunluk = 0;
+                    switch (secim)
                     {
-                        Console.WriteLine($"Dairenin alanı {uzunluk * uzunluk}π");
-                    }
-                    else if (tercih == "çevre")
-                    {
-                        Console.WriteLine($"Dairenin çevresi {2 * uzunluk}π");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Yanlış bir ifade girdiniz");
+                        case 1:
+                            Console.Write("You chose Square. Area/Perimeter = ");
+                            tercih = Console.ReadLine().ToLower().Trim();
+                            Console.Write("Enter the length of one side of the square = ");
+                            uzunluk = Convert.ToInt32(Console.ReadLine());
+                            if (tercih == "area")
+                            {
+                                Console.WriteLine($"The area of the square is {uzunluk * uzunluk}");
+                            }
+                            else if (tercih == "perimeter")
+                            {
+                                Console.WriteLine($"The perimeter of the square is {4 * uzunluk}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("You entered an invalid input");
+                            }
+                            break;
+                        case 2:
+                            Console.Write("You chose Circle. Area/Perimeter = ");
+                            tercih = Console.ReadLine().ToLower().Trim();
+                            Console.Write("Enter the diameter of the circle = ");
+                            uzunluk = Convert.ToInt32(Console.ReadLine());
+                            if (tercih == "area")
+                            {
+                                Console.WriteLine($"The area of the circle is {uzunluk * uzunluk * Math.PI}");
+                            }
+                            else if (tercih == "perimeter")
+                            {
+                                Console.WriteLine($"The circumference of the circle is {2 * uzunluk * Math.PI}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("You entered an invalid input");
+                            }
+                            break;
+                        case 3:
+                            Console.Write("You chose Triangle. Area/Perimeter = ");
+                            tercih = Console.ReadLine().ToLower().Trim();
+                            Console.Write("Enter the length of one side of the equilateral triangle = ");
+                            uzunluk = Convert.ToInt32(Console.ReadLine());
+
+                            if (tercih == "area")
+                            {
+                                Console.WriteLine($"The area of the equilateral triangle is {((uzunluk * uzunluk) * Math.Sqrt(3)) / 4}");
+                            }
+                            else if (tercih == "perimeter")
+                            {
+                                Console.WriteLine($"The perimeter of the equilateral triangle is {3 * uzunluk}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("You entered an invalid input");
+                            }
+
+                            break;
                     }
                     break;
-                case 3:
-                    Console.Write("Üçgeni Seçtiniz Alan/Çevre = ");
-                    tercih = Console.ReadLine().ToLower().Trim();
-                    Console.Write("Eşkenar üçgenin bir kenarının uzunluğunu giriniz = ");
-                    uzunluk = Convert.ToInt32(Console.ReadLine());
-
-                    if (tercih == "alan")
-                    {
-                        Console.WriteLine($"Eşkenar üçgenin alanı {((uzunluk * uzunluk) * Math.Sqrt(3)) / 4}");
-                    }
-                    else if (tercih == "çevre")
-                    {
-                        Console.WriteLine($"Eşkenar üçgenin çevresi {3 * uzunluk}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Yanlış bir ifade girdiniz");
-                    }
-
+                default:
+                    Console.WriteLine("Bir seçim yapın / Make a choice");
                     break;
             }
+
+
             #endregion
 
 
