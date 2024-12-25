@@ -4,9 +4,9 @@
     {
         static void Main(string[] args)
         {
-            string formatHata = "Lütfen sadece sayı değeri giriniz";
+            string formatHata = "Lütfen sadece sayı giriniz";
             string OverflowHata = "Girilen sayı değeri tanımlanamadı";
-            string notDegeriHata = "Notu 0-100 aralığında olmalı";
+            string notDegeriHata = "Notu 0-100 aralığında girmelisiniz";
 
             double vizeNotu = 0;
             double finalNotu = 0;
@@ -101,7 +101,7 @@
                     }
 
                     notOrtalama = vizeNotu * 0.40 + finalNotu * 0.60;
-                    dizi[i + 1, 5] = notOrtalama.ToString("F2");
+                    dizi[i + 1, 5] = notOrtalama.ToString();
                     ortalamaToplam[i] = notOrtalama;
 
                     if (notOrtalama >= 85) { dizi[i + 1, 6] = "AA"; }
@@ -113,6 +113,8 @@
                     else if (notOrtalama >= 20) { dizi[i + 1, 6] = "DD"; }
                     else if (notOrtalama >= 10) { dizi[i + 1, 6] = "FD"; }
                     else { dizi[i + 1, 6] = "FF"; }
+
+                    Console.WriteLine(" ");
                 }
 
                 enKucuk = ortalamaToplam.Min();
@@ -125,7 +127,7 @@
                     {
                         Console.Write(dizi[i, j] + " ");
                     }
-                    Console.WriteLine();
+                    Console.WriteLine(" ");
                 }
 
                 Console.WriteLine($"\nSınıf Ortalaması: {sinifNotOrtalama:F2}\nEn Düşük Not: {enKucuk}\nEn Yüksek Not: {enBuyuk}");
@@ -146,9 +148,3 @@
     }
 }
 
-
-/*
-FormatException: Kullanıcı sayı yerine harf veya başka bir şey girdiğinde yakalanır.
-OverflowException: Sayı çok büyükse veya bellek sınırını aşıyorsa yakalanır.
-Genel Exception: Beklenmeyen hatalar için kullanılır.
-*/
