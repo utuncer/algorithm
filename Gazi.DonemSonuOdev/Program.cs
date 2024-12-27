@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace Gazi.DonemSonuOdev
+﻿namespace Gazi.DonemSonuOdev
 {
     internal class Program
     {
@@ -50,7 +48,7 @@ namespace Gazi.DonemSonuOdev
                 for (int i = 0; i < ogrenciSayisi; i++)
                 {
                     Console.Write($"{i + 1}. Öğrencinin Numarasını Giriniz: ");
-                    dizi[i + 1, 0] = int.Parse(Console.ReadLine()).ToString();
+                    dizi[i + 1, 0] = int.Parse(Console.ReadLine()).ToString().Trim();
                     Console.Write($"{i + 1}. Öğrencinin Adını Giriniz: ");
                     dizi[i + 1, 1] = Console.ReadLine().Trim();
 
@@ -62,7 +60,7 @@ namespace Gazi.DonemSonuOdev
                         try
                         {
                             Console.Write($"{i + 1}. Öğrencinin Vize Notunu Giriniz: ");
-                            dizi[i + 1, 3] = Console.ReadLine();
+                            dizi[i + 1, 3] = Console.ReadLine().Trim();
                             vizeNotu = Convert.ToDouble(dizi[i + 1, 3]);
 
                             if (vizeNotu > 100 || vizeNotu < 0)
@@ -89,7 +87,7 @@ namespace Gazi.DonemSonuOdev
                         try
                         {
                             Console.Write($"{i + 1}. Öğrencinin Final Notunu Giriniz: ");
-                            dizi[i + 1, 4] = Console.ReadLine();
+                            dizi[i + 1, 4] = Console.ReadLine().Trim();
                             finalNotu = Convert.ToDouble(dizi[i + 1, 4]);
 
                             if (finalNotu > 100 || finalNotu < 0)
@@ -158,4 +156,3 @@ namespace Gazi.DonemSonuOdev
         }
     }
 }
-
